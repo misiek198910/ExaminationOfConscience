@@ -1,0 +1,362 @@
+<resources>
+    <string name="app_name">Rachunek Sumienia</string>
+
+    <string name="title_after_confession">3. Po Spowiedzi</string>
+    <string name="content_desc_back">Powrót</string>
+    <string name="click_to_read_more">Kliknij, aby przeczytać całość</string>
+
+    <string name="after_confession_thanksgiving_title">Dziękczynienie</string>
+    <string name="after_confession_thanksgiving_content">Boże mój, z całego serca dziękuję Ci za Twoje nieskończone miłosierdzie. Tyś obmył moją duszę z brudu grzechów i przywrócił mi życie łaski. Spraw, abym odtąd wiernie Ci służył i nigdy więcej nie odłączył się od Ciebie przez grzech. Amen.</string>
+
+    <string name="after_confession_penance_title">Wypełnienie Pokuty</string>
+    <string name="after_confession_penance_content">Pamiętaj, że pokuta zadana przez spowiednika jest ważnym elementem sakramentu. Staraj się wypełnić ją jak najszybciej, w duchu wdzięczności. Jeśli pokuta polega na modlitwie, odmów ją w skupieniu.</string>
+
+    <string name="after_confession_amends_title">Zadośćuczynienie</string>
+    <string name="after_confession_amends_content">Zadośćuczynienie obejmuje nie tylko modlitwę, ale także naprawienie szkód materialnych i moralnych (np. oddanie skradzionej rzeczy, przeproszenie za obmowę). Jest to wyraz szczerości Twojej poprawy.</string>
+
+    <string name="after_confession_perseverance_title">Modlitwa o Wytrwanie</string>
+    <string name="after_confession_perseverance_content">Panie Jezu, Ty wiesz, jak słaby jestem. Proszę Cię o siłę Twojego Ducha, abym potrafił zwyciężać pokusy i unikać okazji do grzechu. Niech Twoja łaska owocuje w moim życiu dobrymi uczynkami i miłością. Amen.</string>
+
+    <string name="title_10_commandments">10 Przykazań</string>
+    <string name="title_for_spouses">Dla Małżonków</string>
+    <string name="content_desc_summary">Podsumowanie</string>
+
+    <string name="title_mark_sins">Zaznacz grzechy</string>
+
+    <string name="title_choose_examen">Wybierz Rachunek</string>
+
+    <string name="title_summary">Podsumowanie</string>
+    <string name="content_desc_clear_all">Wyczyść wszystko</string>
+    <string name="dialog_clear_list_title">Wyczyścić listę?</string>
+    <string name="dialog_clear_list_text">Czy na pewno chcesz usunąć wszystkie zaznaczone grzechy?</string>
+    <string name="dialog_clear_list_confirm">Tak, wyczyść</string>
+    <string name="dialog_clear_list_cancel">Anuluj</string>
+    <string name="empty_sins_list">Brak zaznaczonych grzechów.</string>
+    <string name="content_desc_delete">Usuń</string>
+
+    <string name="action_copy">Kopiuj</string>
+    <string name="action_save">Zapisz</string>
+    <string name="action_send">Wyślij</string>
+
+    <string name="toast_copied">Skopiowano</string>
+    <string name="toast_pdf_saved">PDF zapisany pomyślnie</string>
+    <string name="toast_pdf_error">Błąd zapisu</string>
+
+    <string name="pdf_title">Mój Rachunek Sumienia</string>
+    <string name="pdf_date_prefix">Data wygenerowania: %1$s</string>
+    <string name="share_pdf_title_prefix">Rachunek Sumienia - %1$s</string>
+    <string name="share_chooser_title">Udostępnij Rachunek</string>
+
+    <string name="main_section_1_title">1. Przygotowanie</string>
+    <string name="main_section_1_subtitle">Modlitwy i zasady spowiedzi</string>
+    <string name="main_section_2_title">2. Rachunek Sumienia</string>
+    <string name="main_section_2_subtitle">Lista grzechów i podsumowanie</string>
+    <string name="main_section_3_title">3. Po Spowiedzi</string>
+    <string name="main_section_3_subtitle">Dziękczynienie i pokuta</string>
+
+    <string name="cd_news">Ogłoszenia</string>
+    <string name="cd_settings">Ustawienia</string>
+
+    <string name="title_news">Ogłoszenia</string>
+    <string name="news_empty">Brak nowych ogłoszeń</string>
+
+    <string name="title_preparation">1. Przygotowanie</string>
+
+    <string name="prep_section_conditions_title">5 Warunków Dobrej Spowiedzi</string>
+    <string name="prep_section_conditions_content">1. Rachunek sumienia.\n2. Żal za grzechy.\n3. Mocne postanowienie poprawy.\n4. Szczera spowiedź.\n5. Zadośćuczynienie Panu Bogu i bliźniemu.</string>
+
+    <string name="prep_section_prayer_title">Modlitwa</string>
+    <string name="prep_section_prayer_content">Wszechmogący i miłosierny Boże, oświeć mój umysł, abym poznał grzechy, które popełniłem, i odmień moje serce, abym szczerze nawrócił się do Ciebie. Niech Twoja miłość zjednoczy mnie ze wszystkimi, którym wyrządziłem krzywdę. Niech Twoja dobroć uleczy moje rany, umocni moją słabość. Niech Duch Święty obdarzy mnie nowym życiem i odnowi we mnie miłość, aby w moich czynach zajaśniał obraz Twojego Syna, który z Tobą żyje i króluje na wieki wieków. Amen.</string>
+
+    <string name="prep_section_initial_prayer_title">Modlitwa Początkowa</string>
+    <string name="prep_section_initial_prayer_content">Panie Boże, Ojcze Niebieski! Żałuję z całego serca za wszystkie grzechy moje, ponieważ nimi zasłużyłem na piekło. Najbardziej jednak żałuję, żem Ciebie, najlepszego Ojca, grzechami moimi zasmucił i obraził. O! Jezu, Zbawicielu mój dobry Tyś cierpiał i umarł na krzyżu za nasze grzechy. Przebacz mi moja nie wdzięczność. Obiecuję szczerze się poprawić, a przede wszystkim nie popełnić już nigdy więcej grzechu ciężkiego. Pomóż mi do tego swoją łaską. Boże, bądź miłościw mnie grzesznemu! Matko Najświętsza. Ucieczko grzeszników, módl się za mnie i udziel mi pomocy, abym więcej nie grzeszył.</string>
+
+    <string name="prep_section_holy_spirit_title">Wezwanie Ducha Świętego</string>
+    <string name="prep_section_holy_spirit_content">Przybądź, Duchu Święty, oświeć mój rozum, abym moje grzechy należycie poznał. Pobudź moją wolę i moje serce, abym za nie szczerze żałował i odważnie je wyznał. Daj mi siłę do tego, bym się z nich na- prawdę poprawił. Święta Maryjo, Matko Boża, Ucieczko grzeszących, pomóż mi przez Twoje wstawiennictwo. Święty mój patronie, Aniele Stróżu mój, uproście mi łaskę dobrej spowiedzi świętej. Amen.</string>
+
+    <string name="prep_section_sacrament_title">Sakrament Spowiedzi</string>
+    <string name="prep_section_sacrament_content">Sakrament spowiedzi jak jego sama nazwa wskazuje, jest to Sakrament. Bez niego my ludzie, nie moglibyśmy powierzyć swoich grzechów Panu Bogu. Przez ten sakrament zostajemy oczyszczeni z grzechów. Jest to sakrament miłości, przylgnięcia do kochanego Ojca, który czeka, aż do niego przyjdziemy ze swoimi grzechami i problemami wprost w jego ramiona. On nas kocha mimo naszych słabości. Wie dokładnie, że jesteśmy słabi i grzeszni. Upadamy… Ale nie powinniśmy pozostawać w grzechu, który nas niszczy od środka. Wszystkie grzechy których nie oddamy kochanemu ojcu w sakramencie pokuty i pojednania, mogą przejść przez nas na inne osoby. Każda nasza złość wylana na naszych ukochanych, może zostać przekazana dalej. Dlatego bardzo ważne jest, aby nie zwlekać z oddaniem ich Panu Bogu.</string>
+
+    <string name="prep_section_course_title">Treść, oraz przebieg spowiedzi</string>
+    <string name="prep_section_course_content">1. Niech będzie pochwalny Jezus Chrystus.\n\n2. W imię Ojca i syna i Ducha Św. (żegnamy się).\n\n3. Teraz należy się przedstawić np. \"Mam na imię Jan, mam lat 40, Jestem żonaty\".\n\n4. Ostatni raz u spowiedzi byłem … (kiedy), obraziłem Pana Boga następującymi grzechami: (wyznajemy grzechy, przy ciężkich grzechach należy podać ich ilość i okoliczności).\n\n5. Za wszystkie grzechy, które wyznałem i za te których nie pamiętam, bardzo żałuję, oraz postanawiam poprawę.\n\n6. Proszę ojcze o rozgrzeszenie.\n\nPodana tu treść spowiedzi jest przykładowa, a jej przebieg może być dostosowany do sytuacji.</string>
+
+    <string name="title_privacy_policy">Polityka Prywatności</string>
+
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_category_app">APLIKACJA</string>
+
+    <string name="settings_premium_title">Wersja Premium</string>
+    <string name="settings_premium_subtitle">Usuń reklamy i wspieraj rozwój</string>
+
+    <string name="settings_privacy_title">Polityka prywatności</string>
+    <string name="settings_privacy_subtitle">Jak dbamy o Twoje dane</string>
+
+    <string name="settings_about_title">O aplikacji</string>
+    <string name="settings_version_subtitle">Wersja %1$s</string>
+
+    <string name="about_app_description">Rachunek Sumienia.\n\nAutor: Michał Schmude\n\n2026</string>
+
+    <string name="loading_text">Ładowanie…</string>
+
+    <string name="subscription_title">Subskrypcja Premium</string>
+    <string name="subscription_card_title">Odblokuj pełną wersję</string>
+    <string name="subscription_card_subtitle">Pozbądź się reklam i wesprzyj rozwój aplikacji, aby mogła pomagać innym.</string>
+
+    <string name="benefit_no_ads">Brak reklam w całej aplikacji</string>
+    <string name="benefit_support">Wsparcie dla twórcy</string>
+
+    <string name="subscription_status_label">STATUS</string>
+    <string name="subscription_status_active">AKTYWNY</string>
+    <string name="subscription_status_inactive">NIEAKTYWNY</string>
+
+    <string name="btn_manage_subscription">Zarządzaj subskrypcją</string>
+    <string name="btn_restore_purchase">Przywróć zakup</string>
+
+    <string name="loading_offers">Pobieranie ofert…</string>
+    <string name="subscription_disclaimer">Subskrypcja odnawia się automatycznie. Możesz zrezygnować w dowolnym momencie w Sklepie Play.</string>
+    <string name="toast_no_play_store">Nie znaleziono Sklepu Play</string>
+    <string name="toast_refreshing">Odświeżanie…</string>
+
+    <string name="btn_understand">ROZUMIEM</string>
+
+    <string-array name="spinner2_items">
+        <item>Rachunek dziesięciu przykazań</item>
+        <item>Rachunek dla małżonków</item>
+    </string-array>
+
+    <string-array name="rach_data_0">
+        <item>1. Nie będziesz miał bogów cudzych przede mną.</item>
+        <item>2. Nie będziesz, brał imienia Pana Boga Twego nadaremno.</item>
+        <item>3. Pamiętaj, abyś dzień święty święcił.</item>
+        <item>4. Czcij ojca twego i matkę twoją.</item>
+        <item>5. Nie zabijaj.</item>
+        <item>6,9. Nie cudzołóż, Nie pożądaj żony bliźniego twego.</item>
+        <item>7,10. Nie kradnij, Nie pożądaj żadnej rzeczy bliźniego twego.</item>
+        <item>8. Nie mów fałszywego świadectwa przeciw bliźniemu twemu.</item>
+    </string-array>
+    <string-array name="rach_data_items_0_0">
+        <item>Zaniedbywałem modlitwę osobistą i rodzinną.</item>
+        <item>Dobrowolnie wątpiłem o prawdach wiary (jakich?).</item>
+        <item>Zaparłem się wiary.</item>
+        <item>Publicznie krytykowałem prawdy wiary.</item>
+        <item>Wstydziłem się swojej wiary(w pracy, na ulicy, w swoim domu).</item>
+        <item>Nie starałem się o pogłębienie swojej wiedzy religijnej przez słuchanie kazań, czytanie Pisma Św., książek religijnych itp.</item>
+        <item>Narzekałem na Pana Boga, np. w niepowodzeniach.</item>
+        <item>Poddawałem się rozpaczy i zwątpieniu.</item>
+        <item>Wierzyłem w zabobony, wróżby czy horoskopy, korzystałem z nich.</item>
+        <item>Znieważyłem osoby duchowne, miejsca i rzeczy poświęcone, np. kościoły, cmentarze, krzyże, obrazy.</item>
+        <item>Przeszkadzałem drugim w spełnianiu praktyk religijnych, np. w rodzinie, w środowisku pracy.</item>
+        <item>Ceniłem pieniądz, wygody, przyjemności, sport… itp. bardziej niż sprawy Boże i zbawienie własnej duszy.</item>
+        <item>Narażałem się na utratę wiary przez złe widowiska, filmy, książki, programy telewizyjne, towarzystwo… itp.</item>
+        <item>Zapierałem się Boga lub Go zwalczałem.</item>
+        <item>Odwodziłem innych od Boga, mszy św., modlitwy.</item>
+        <item>Występowałem przeciw nauce Bożej lub nauce Kościoła.</item>
+        <item>Dałem zgorszenie swoim złym zachowaniem lub złym mówieniem.</item>
+    </string-array>
+    <string-array name="rach_data_items_0_1">
+        <item>Wymawiałem imiona Świętych lub imię Boże – bez uszanowania, bez potrzeby, w żartach, w gniewie, z przyzwyczajenia.</item>
+        <item>Bluźniłem przeciw Bogu lub Świętym.</item>
+        <item>Nie dotrzymywałem przysięgi albo ślubu złożonego Bogu.</item>
+        <item>Przysięgałem niepotrzebnie lub złożyłem fałszywą lub niemoralną przysięgę. Czy naprawiłem wyrządzoną przez to krzywdę?</item>
+        <item>Przyjąłem po świętokradzku Sakramenty święte -które?</item>
+        <item>Przeklinałem kogoś w myślach lub publicznie.</item>
+        <item>Rozmawiałem o sprawach religijnych lekceważąco.</item>
+        <item>Wstydziłem się chrześcijańskiego pozdrowienia lub zewnętrznych gestów religijnych, jak znak krzyża świętego, przyklęknięcia, zdjęcie czapki przed kościołem lub krzyżem.</item>
+        <item>Nosiłem lub noszę symbole religijne (dewocjonalia) jako ozdobę, maskotkę lub fetysz – a nie jako zewnętrzny wyraz wiary.</item>
+        <item>Używałem słów z Pisma Świętego dla żartów, dla obrony grzesznych interesów, dla poparcia błędnej nauki.</item>
+        <item>Brałem udział w seansach spirytystycznych.</item>
+    </string-array>
+    <string-array name="rach_data_items_0_2">
+        <item>Nie przeżywałem po chrześcijańsku w rodzinie Dnia Pańskiego.</item>
+        <item>Opuściłem z własnej winy Mszę świętą w niedzielę lub w święto nakazane.</item>
+        <item>Spóźniłem się na Mszę świętą w niedzielę lub w święto nakazane.</item>
+        <item>We Mszy świętej nie brałem czynnego udziału.</item>
+        <item>Przeszkadzałem innym w skupieniu w czasie Mszy świętej.</item>
+        <item>Pracowałem w niedzielę lub w inne święto bez koniecznej potrzeby.</item>
+        <item>Znieważyłem Dzień Pański przez pijaństwo lub udział w grzesznych zabawach i rozrywkach.</item>
+    </string-array>
+    <string-array name="rach_data_items_0_3">
+        <item>Nie okazywałem swoim rodzicom miłości i szacunku.</item>
+        <item>Odnosiłem się do rodziców w sposób ubliżający, kłóciłem się z nimi, obmawiałem ich, biłem ich, wstydziłem się swoich rodziców.</item>
+        <item>Nie starałem się pomóc rodzicom.</item>
+        <item>Nie byłem posłuszny rodzicom, nauczycielom, wychowawcom.</item>
+        <item>Nie modliłem się za rodziców.</item>
+    </string-array>
+    <string-array name="rach_data_items_0_4">
+        <item>Szkodziłem sobie na zdrowiu, np. przez nadmiar jedzenia, palenia tytoniu, picia alkoholu, przeciążenie pracą, lekceważenie snu, wypoczynku.</item>
+        <item>Usiłowałem popełnić samobójstwo.</item>
+        <item>Życzyłem sobie lub bliźniemu śmierci.</item>
+        <item>Lekkomyślnie narażałem swoje zdrowie i życie.</item>
+        <item>Zabiłem człowieka, może nie narodzonego.</item>
+        <item>Stosowałem środki wczesnoporonne (mechaniczne lub chemiczne) lub namawiałem.</item>
+        <item>Zachęcałem, namawiałem lub zmuszałem do przerwania ciąży.</item>
+        <item>Żywię do bliźnich nienawiść lub niechęć.</item>
+        <item>Pobiłem lub pokaleczyłem kogoś.</item>
+        <item>Gorszyłem bliźnich swoim postępowaniem.</item>
+        <item>Szkodziłem bliźniemu (w jaki sposób?).</item>
+        <item>Namawiałem do grzechu (jakiego?).</item>
+        <item>Prowadziłem pojazd w stanie nietrzeźwym.</item>
+        <item>Lekceważyłem przepisy bezpieczeństwa na drodze lub przy pracy.</item>
+        <item>Nie traktowałem środowiska naturalnego jako dzieła Bożego.</item>
+        <item>Niszczyłem moje naturalne otoczenie lub nie przestrzegałem obowiązujących przepisów odnośnie do ochrony środowiska naturalnego.</item>
+        <item>Znęcałem się nad zwierzętami.</item>
+        <item>Gardziłem drugim człowiekiem.</item>
+        <item>Wyśmiewałem się z bliźniego, przezywałem.</item>
+        <item>Nie modliłem się za osobistych wrogów i prześladowców.</item>
+        <item>Nie przebaczyłem komuś w swoim sercu.</item>
+        <item>Nie ratowałem bliźniego w zagrożeniu, odmówiłem mu pomocy.</item>
+        <item>Nie panowałem nad swoimi złymi skłonnościami, np. do gniewu, chciwości, zmysłowości, zazdrości itp.</item>
+        <item>Bawiłem się cudzym kosztem.</item>
+        <item>Przyczyniłem się do rozwoju nałogu u siebie lub u innych.</item>
+        <item>Zadawałem świadomie cierpienia fizyczne, psychiczne lub moralne.</item>
+        <item>Niszczyłem przyjaźń między ludźmi.</item>
+        <item>Zaniedbuję swój rozwój intelektualny, moralny, religijny, fizyczny, umysłowy, psychiczny.</item>
+        <item>Przebywałem w złym towarzystwie.</item>
+    </string-array>
+    <string-array name="rach_data_items_0_5">
+        <item>Nie miałem należytego poszanowania dla ciała i jego sił rozrodczych.</item>
+        <item>Miałem upodobanie w myślach nieskromnych.</item>
+        <item>Pragnąłem widzieć nieskromności.</item>
+        <item>Podniecałem się do grzechu nieczystego przez lekturę, fantazję, filmy, widowiska, pornografię.</item>
+        <item>Popełniłem grzechy nieczyste ze sobą lub z inną osobą.</item>
+        <item>Pożądałem drugiej osoby.</item>
+        <item>Prowadziłem nieprzyzwoite rozmowy.</item>
+        <item>Nie odsunąłem od siebie okazji do grzechów nieczystych. np. podejrzane osoby, obrazki porno, książki, zdjęcia, filmy, programy telewizyjne.</item>
+        <item>Przekazywałem innym złe książki, filmy porno.</item>
+        <item>Nie przestrzegałem rozumnej wstydliwości w ubiorze i zachowaniu.</item>
+        <item>We wzajemnym pożyciu stosowałem: stosunki przerywane, środki poronne, antykoncepcyjne.</item>
+        <item>Nie starałem się poznać etycznych metod kierowania płodnością.</item>
+        <item>Nie szanowałem w małżeństwie czasowej niemożności współżycia.</item>
+        <item>Nie uświadamiałem stopniowo swoich dzieci w dziedzinie seksualnej.</item>
+        <item>Stwarzałem sytuacje rozbudzające pożądanie.</item>
+        <item>Podglądałem życie seksualne innych.</item>
+        <item>Wciągałem w przeżycia seksualne osoby nieletnie.</item>
+        <item>Obnażałem się publicznie dla podniecenia innych.</item>
+        <item>Spowodowałem zwlekanie z rodzeniem dzieci z urojonych przyczyn.</item>
+        <item>Podejmowałem współżycie seksualne w małżeństwie w stanie nietrzeźwym.</item>
+        <item>Planowałem i zmierzałem do rozwodu.</item>
+        <item>Rozwiodłem się.</item>
+        <item>Wszedłem po rozwodzie w następny związek małżeński (cywilny).</item>
+    </string-array>
+    <string-array name="rach_data_items_0_6">
+        <item>Przywłaszczyłem sobie cudzą rzecz (prywatną, społeczną).</item>
+        <item>Przywłaszczyłem sobie owoce cudzej pracy lub zasługi innych.</item>
+        <item>Wyrządziłem szkodę przez lenistwo, spóźnialstwo, niedotrzymanie umowy lub ustalonych terminów.</item>
+        <item>Zatrzymałem rzecz znalezioną lub pożyczoną.</item>
+        <item>Nie oddałem długu w terminie albo w ogóle nie oddałem.</item>
+        <item>Rzecz skradzioną kupiłem albo sprzedałem.</item>
+        <item>Dałem się przekupić przez dawanie albo branie łapówek.</item>
+        <item>Zniszczyłem cudzą własność.</item>
+        <item>Nie dopilnowałem rzeczy będących własnością wspólną, społeczną.</item>
+        <item>Oszukałem bliźniego w handlu.</item>
+        <item>Byłem chciwy, zazdrosny, pożądałem dobra cudzego.</item>
+        <item>Nie wynagrodziłem krzywd ani przed Spowiedzią świętą ani później.</item>
+        <item>Nie wynagradzałem sprawiedliwie za pracę.</item>
+        <item>Przywiązywałem się zbytnio do rzeczy materialnych.</item>
+        <item>Byłem nieoszczędny, a skąpy wobec potrzebujących.</item>
+        <item>Marnowałem talenty swoje i innych.</item>
+        <item>Zabierałem innym bezmyślnie czas.</item>
+        <item>Oszukiwałem przy transakcjach.</item>
+    </string-array>
+    <string-array name="rach_data_items_0_7">
+        <item>Kłamałem i kłamię z przyzwyczajenia.</item>
+        <item>Posądzałem lekkomyślnie.</item>
+        <item>Bez potrzeby mówiłem o wadach lub grzechach bliźnich (obmowy).</item>
+        <item>Oczerniałem bliźniego, opowiadając o nim nieprawdziwe, złe rzeczy.</item>
+        <item>Byłem obłudny wobec bliźniego.</item>
+        <item>Nie naprawiłem krzywd spowodowanych moim kłamstwem.</item>
+        <item>Nie zachowałem powierzonej mi tajemnicy albo sekretów.</item>
+        <item>Nie zachowałem tajemnicy zawodowej (np. lekarz, pielęgniarka).</item>
+        <item>Nie dotrzymałem słowa, obietnic.</item>
+        <item>Osądzałem bliźnich.</item>
+        <item>Pozywałem do sądu z błahych powodów.</item>
+        <item>Stawałem po stronie nieprawdy (np. dla korzyści).</item>
+        <item>Byłem wścibski, podsłuchiwałem, podglądałem.</item>
+        <item>Zwalałem winę na bliźniego.</item>
+        <item>Doniosłem fałszywie lub fałszywie zeznawałem.</item>
+        <item>Mówiłem bezmyślnie, głupio (gadulstwo).</item>
+        <item>Fałszowałem dokumenty.</item>
+        <item>Zmuszałem kogoś do przyjęcia poglądów sprzecznych z jego przekonaniami.</item>
+    </string-array>
+    <!-- arrays rachunek małżonków-->
+    <string-array name="rach_data_1">
+        <item>Ślubuję ci miłość</item>
+        <item>Miłość oblubieńcza</item>
+        <item>Ślubuję Ci wierność</item>
+        <item>Ślubuję Ci uczciwość</item>
+        <item>Oraz że Cię nie opuszczę</item>
+    </string-array>
+    <string-array name="rach_data_items_1_0">
+        <item>Czy dostrzegam w swoim współmałżonku godność dziecka Bożego i szanuję go każdego dnia?</item>
+        <item>Czy szczerze zależy mi na zbawieniu i autentycznym dobrze mojej żony / mojego męża?</item>
+        <item>Czy wspieram współmałżonka codzienna modlitwą i daję mu dobry przykład chrześcijańskiego życia?</item>
+        <item>Czy potrafię okazywać miłość i czułość zarówno przez słowa, jak i drobne, codzienne gesty?</item>
+        <item>Czy dbam o dobre imię i autorytet współmałżonka przy dzieciach oraz w obecności innych ludzi?</item>
+        <item>Czy nie podchodzę do małżeństwa interesownie, szukając jedynie własnej wygody, statusu czy ochrony przed samotnością?</item>
+        <item>Czy mam w sobie cierpliwość wobec wad, potknięć i słabości drugiej połówki?</item>
+        <item>Czy potrafię być wielkoduszny i chętnie przebaczam urazy w duchu miłosierdzia?</item>
+        <item>Czy potrafię szczerze cieszyć się z sukcesów, talentów i radości mojego współmałżonka?</item>
+        <item>Czy nie dopuszczam do głosu chorobliwej zazdrości o osiągnięcia lub relacje współmałżonka?</item>
+        <item>Czy nie próbuję dominować w małżeństwie i unikam egoistycznej rywalizacji o władzę w domu?</item>
+        <item>Czy nie stawiam współmałżonkowi nierealnych wymagań i nie porównuję go złośliwie z innymi ludźmi?</item>
+        <item>Czy nie wywieram na niego presji, która mogłaby go skłonić do złamania sumienia lub przykazań?</item>
+        <item>Czy wykazuję szczere zainteresowanie sprawami, troskami i pracą, które są ważne dla współmałżonka?</item>
+        <item>Czy pomagam mu rozwijać skrzydła i motywuję do wzrostu duchowego oraz osobistego?</item>
+        <item>Czy chętnie pomagam w codziennych obowiązkach domowych, czy też egoistycznie zrzucam wszystko na drugą stronę?</item>
+        <item>Czy dbam o siebie i swój wygląd z miłości i szacunku do współmałżonka, by wciąż być dla niego atrakcyjnym?</item>
+        <item>Czy wspólnie z żoną/mężem staram się rozeznawać wolę Bożą w podejmowaniu ważnych życiowych decyzji?</item>
+        <item>Czy szanuję wysiłek wkładany w pracę zarobkową i mądrze zarządzam wspólnym budżetem?</item>
+        <item>Czy nie wykazuję się chciwością, rozrzutnością lub pogonią za luksusem kosztem czasu dla rodziny?</item>
+        <item>Czy nie zmuszam współmałżonka do nadludzkiej pracy ponad siły tylko po to, by pomnażać majątek?</item>
+    </string-array>
+    <string-array name="rach_data_items_1_1">
+        <item>Czy traktuję ciało współmałżonka oraz własne z szacunkiem należnym świątyni Ducha Świętego?</item>
+        <item>Czy dbam o opanowanie i czystość serca poprzez modlitwę i pracę nad własnymi skłonnościami?</item>
+        <item>Czy pomagam mojej żonie / mojemu mężowi w zachowaniu i pielęgnowaniu czystości małżeńskiej?</item>
+        <item>Czy unikam wulgarnego języka i niestosownych żartów, szczególnie w sferze intymnej?</item>
+        <item>Czy dbam o czystość swoich myśli i wyobraźni, odrzucając pornografię (filmy, zdjęcia, strony internetowe)?</item>
+        <item>Czy nie oczekuję od współmałżonka zachowań intymnych, które byłyby sprzeczne z chrześcijańską moralnością lub raniły jego godność?</item>
+        <item>Czy szanuję naturalny porządek płodności i nie stosuję oraz nie wymuszam stosowania sztucznej antykoncepcji, która niszczy sakramentalną więź i jest grzechem ciężkim?</item>
+        <item>Czy nie zmuszam współmałżonka do niepełnych lub egoistycznych aktów małżeńskich, szukając jedynie własnej rozkoszy bez liczenia się z drugą osobą?</item>
+        <item>Czy jako żona/mąż wyraźnie sprzeciwiam się egoizmowi w sferze intymnej i rozmawiam o tym z partnerem w prawdzie?</item>
+        <item>Czy potrafię zrezygnować ze współżycia, jeśli wymaga tego dobro, zdrowie lub stan psychiczny współmałżonka?</item>
+        <item>Czy kieruję się w sferze seksualnej rozumem i miłością, czy też bezwzględnie ulegam ślepemu popędowi?</item>
+        <item>Czy potrafimy wspólnie zachować okresową wstrzemięźliwość, gdy wymagają tego ważne przyczyny (np. choroba, ciąża zagrożona)?</item>
+        <item>Czy staram się poznać i rozumieć naturalne procesy biologiczne związane z naszą płodnością?</item>
+        <item>Czy wykorzystuję metody naturalnego planowania rodziny w duchu szacunku do ludzkiej natury i daru życia?</item>
+        <item>Czy w planowaniu wielkości naszej rodziny kierujemy się zarówno roztropnością, jak i chrześcijańską wielkodusznością wobec daru potomstwa?</item>
+    </string-array>
+    <string-array name="rach_data_items_1_2">
+        <item>Czy szanuję dobre imię swojego współmałżonka i staję w jego obronie?</item>
+        <item>Czy unikam obmawiania i krytykowania go w obecności innych ludzi (dzieci, rodziców czy znajomych)?</item>
+        <item>Czy traktuję żonę/męża jako najważniejszą osobę na ziemi, stawiając naszą relację ponad więzi z rodzicami czy przyjaciółmi?</item>
+        <item>Czy na pierwszym miejscu pielęgnuję naszą małżeńską bliskość, przyjaźń i jedność, zanim zaangażuję się w inne relacje?</item>
+        <item>Czy dochowuję lojalności oraz dyskrecji, nie wyjawiając postronnym osobom spraw, które powinny zostać tylko między nami?</item>
+        <item>Czy pozostaję w pełni wierny swojemu współmałżonkowi, zarówno w moich czynach, jak i w myślach czy pragnieniach?</item>
+    </string-array>
+    <string-array name="rach_data_items_1_3">
+        <item>Czy w codziennym życiu aktywnie buduję i pielęgnuję jedność w naszym małżeństwie?</item>
+        <item>Czy nie próbuję kontrolować współmałżonka, uciekając się do szantażu emocjonalnego, manipulacji lub straszenia odejściem?</item>
+        <item>Czy szanuję wolność i wolną wolę żony/męża, dając jej/jemu prawo do własnego zdania i odmowy w określonych sytuacjach?</item>
+        <item>Czy solidarnie i sprawiedliwie dzielę ze współmałżonkiem odpowiedzialność za utrzymanie domu oraz wychowanie dzieci?</item>
+        <item>Czy cechuje mnie pełna prawdomówność wobec współmałżonka, czy też zatajam przed nim istotne fakty i sprawy?</item>
+        <item>Czy dbam o szczerą, otwartą i głęboką komunikację w naszym związku?</item>
+        <item>Czy znajduję w ciągu dnia wystarczająco dużo czasu na spokojną rozmowę z żoną/mężem?</item>
+        <item>Czy potrafię wprost mówić o swoich potrzebach, emocjach i oczekiwaniach, zamiast zmuszać drugą stronę do domyślania się ich?</item>
+        <item>Czy biorę pod uwagę zdanie współmałżonka i szukam kompromisu przy podejmowaniu kluczowych decyzji dla naszej rodziny?</item>
+        <item>Czy potrafię uważnie i bez przerywania wysłuchać tego, co współmałżonek ma mi do przekazania?</item>
+        <item>Czy tworzę w naszej relacji atmosferę bezpieczeństwa i akceptacji, by mąż/żona mógł bez strachu otworzyć przede mną serce i być sobą?</item>
+        <item>Czy mam w sobie autentyczne pragnienie i dobrą wolę, by konstruktywnie rozwiązywać pojawiające się nieporozumienia i konflikty?</item>
+        <item>Czy potrafię szczerze darować winy, nie wracając złośliwie do dawnych zranień i błędów z przeszłości?</item>
+        <item>Czy nie cechuje mnie upór oraz zawziętość, które blokują pojednanie, gdy współmałżonek wyciąga rękę do zgody?</item>
+        <item>Czy panuję nad swoim językiem i unikam ranienia współmałżonka sarkazmem, wyzwiskami czy podniesionym głosem?</item>
+        <item>Czy pamiętam o słowach wsparcia, pochwały i wdzięczności, dostrzegając oraz doceniając codzienne starania drugiej połówki?</item>
+    </string-array>
+    <string-array name="rach_data_items_1_4">
+        <item>Czy dbamy o to, by regularnie spędzać czas tylko we dwoje i pielęgnować naszą bliskość?</item>
+        <item>Czy w relacji ze współmałżonkiem jestem obecny nie tylko ciałem, ale i duchem, angażując się całym sercem w naszą więź?</item>
+        <item>Czy unikam niepotrzebnych, długich nieobecności w domu, które mogłyby osłabić nasze małżeństwo i wystawić je na próbę?</item>
+        <item>Czy współmałżonek może bezwzględnie liczyć na moje wsparcie, opiekę i obecność w chwilach kryzysu, starości czy choroby?</item>
+        <item>Czy potrafię dostrzec smutek drugiej połówki i przyjść jej z autentyczną pociechą oraz empatią?</item>
+    </string-array>
+</resources>
