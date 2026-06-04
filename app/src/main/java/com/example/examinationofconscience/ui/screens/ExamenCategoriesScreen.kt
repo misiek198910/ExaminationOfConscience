@@ -37,7 +37,14 @@ fun ExamenCategoriesScreen(
     onShowSummary: () -> Unit,
     onCategorySelected: (Int, Int) -> Unit
 ) {
-    val arrayRes = if (typeIndex == 0) R.array.rach_data_0 else R.array.rach_data_1
+    // Dynamiczny wybór tablicy kategorii w zależności od wybranego rachunku
+    val arrayRes = when (typeIndex) {
+        0 -> R.array.rach_data_0
+        1 -> R.array.rach_data_1
+        2 -> R.array.rach_data_2
+        else -> R.array.rach_data_0
+    }
+
     val categories = stringArrayResource(id = arrayRes)
 
     val backgroundGradient = Brush.verticalGradient(
@@ -46,25 +53,23 @@ fun ExamenCategoriesScreen(
 
     val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
 
-    // Główny kontener na tło Edge-to-Edge
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(backgroundGradient)
     ) {
         Scaffold(
-            // Zabezpieczenie przed dolnym paskiem nawigacji
             modifier = Modifier.navigationBarsPadding(),
             topBar = {
                 CenterAlignedTopAppBar(
-                    // Zabezpieczenie przed górnym paskiem (zegar, bateria)
                     modifier = Modifier.statusBarsPadding(),
                     title = {
                         Text(
-                            text = if (typeIndex == 0) {
-                                stringResource(id = R.string.title_10_commandments)
-                            } else {
-                                stringResource(id = R.string.title_for_spouses)
+                            text = when (typeIndex) {
+                                0 -> stringResource(id = R.string.title_10_commandments)
+                                1 -> stringResource(id = R.string.title_for_spouses)
+                                2 -> stringResource(id = R.string.title_for_children)
+                                else -> ""
                             },
                             color = Color.White,
                             fontSize = 20.sp,
@@ -126,7 +131,6 @@ fun ExamenCategoriesScreen(
                     item { Spacer(modifier = Modifier.height(80.dp)) }
                 }
 
-                // Reklama tylko dla osób bez Premium, przyklejona do dołu
                 if (!isPremium) {
                     Box(modifier = Modifier.align(Alignment.BottomCenter)) {
                         BannerAdView(modifier = Modifier.fillMaxWidth())

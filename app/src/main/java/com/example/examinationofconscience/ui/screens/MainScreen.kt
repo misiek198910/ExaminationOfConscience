@@ -125,11 +125,11 @@ fun MainScreen(
                     modifier = Modifier
                         .fillMaxSize()
                         .verticalScroll(rememberScrollState())
-                        .padding(horizontal = 24.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                        .padding(horizontal = 24.dp)
+                        .padding(bottom = if (!isPremium) 60.dp else 16.dp), // Bezpieczny margines od dołu przed bannerem
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center // WYCENTROWANIE KART NA ŚRODKU EKRANU
                 ) {
-                    Spacer(modifier = Modifier.height(20.dp))
-
                     // Sekcja 1: Przygotowanie
                     GlassMenuCard(
                         title = stringResource(id = R.string.main_section_1_title),
@@ -157,8 +157,6 @@ fun MainScreen(
                         icon = Icons.Default.CheckCircle,
                         onClick = { onNavigateToSection("po_spowiedzi") }
                     )
-
-                    Spacer(modifier = Modifier.height(100.dp))
                 }
 
                 if (!isPremium) {

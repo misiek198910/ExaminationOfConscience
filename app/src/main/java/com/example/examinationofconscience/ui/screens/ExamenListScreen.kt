@@ -39,8 +39,14 @@ fun ExamenListScreen(
     val resId = getSinArrayResource(typeIndex, catIndex)
     val sinsArray = if (resId != 0) stringArrayResource(id = resId) else emptyArray()
 
-    // POPRAWKA: Pobieramy nazwę aktualnej kategorii do grupowania w PDF
-    val categoryArrayRes = if (typeIndex == 0) R.array.rach_data_0 else R.array.rach_data_1
+    // Dynamiczny wybór zasobu kategorii dla tytułu w PDF
+    val categoryArrayRes = when (typeIndex) {
+        0 -> R.array.rach_data_0
+        1 -> R.array.rach_data_1
+        2 -> R.array.rach_data_2
+        else -> R.array.rach_data_0
+    }
+
     val categories = stringArrayResource(id = categoryArrayRes)
     val currentCategoryName = categories.getOrNull(catIndex) ?: ""
 
@@ -50,18 +56,15 @@ fun ExamenListScreen(
 
     val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
 
-    // Główny kontener na tło Edge-to-Edge
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(backgroundGradient)
     ) {
         Scaffold(
-            // Zabezpieczenie przed dolnym paskiem nawigacji
             modifier = Modifier.navigationBarsPadding(),
             topBar = {
                 CenterAlignedTopAppBar(
-                    // Zabezpieczenie przed górnym paskiem (zegar, bateria)
                     modifier = Modifier.statusBarsPadding(),
                     title = {
                         Text(
@@ -104,14 +107,12 @@ fun ExamenListScreen(
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(12.dp))
                                 .background(if (isChecked) Color.White.copy(0.2f) else Color.White.copy(0.05f))
-                                // POPRAWKA: Przekazujemy currentCategoryName
                                 .clickable { viewModel.toggleSin(sinId, sinText, currentCategoryName) }
                                 .padding(16.dp)
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Checkbox(
                                     checked = isChecked,
-                                    // POPRAWKA: Przekazujemy currentCategoryName
                                     onCheckedChange = { viewModel.toggleSin(sinId, sinText, currentCategoryName) },
                                     colors = CheckboxDefaults.colors(
                                         checkedColor = Color.White,
@@ -129,11 +130,9 @@ fun ExamenListScreen(
                             }
                         }
                     }
-                    // Odstęp dolny, aby reklama nie zasłaniała ostatniego grzechu
                     item { Spacer(modifier = Modifier.height(80.dp)) }
                 }
 
-                // Reklama tylko dla osób bez Premium, przypięta na samym dole kontenera
                 if (!isPremium) {
                     Box(modifier = Modifier.align(Alignment.BottomCenter)) {
                         BannerAdView(modifier = Modifier.fillMaxWidth())
@@ -163,6 +162,19 @@ private fun getSinArrayResource(typeIndex: Int, catIndex: Int): Int {
             2 -> R.array.rach_data_items_1_2
             3 -> R.array.rach_data_items_1_3
             4 -> R.array.rach_data_items_1_4
+            else -> 0
+        }
+        2 -> when (catIndex) { // Rachunek dla dzieci i młodzieży
+            0 -> R.array.rach_data_items_2_0
+            1 -> R.array.rach_data_items_2_1
+            2 -> R.array.rach_data_items_2_2
+            3 -> R.array.rach_data_items_2_3
+            4 -> R.array.rach_data_items_2_4
+            5 -> R.array.rach_data_items_2_5
+            6 -> R.array.rach_data_items_2_6
+            7 -> R.array.rach_data_items_2_7
+            8 -> R.array.rach_data_items_2_8
+            9 -> R.array.rach_data_items_2_9
             else -> 0
         }
         else -> 0

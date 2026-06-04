@@ -119,9 +119,74 @@
 
     <string name="btn_understand">ROZUMIEM</string>
 
+    <string name="title_for_children">Dla dzieci i młodzieży</string>
+
     <string-array name="spinner2_items">
         <item>Rachunek dziesięciu przykazań</item>
         <item>Rachunek dla małżonków</item>
+        <item>Rachunek dla dzieci i młodzieży</item>
+    </string-array>
+
+    <string-array name="rach_data_2">
+        <item>Pierwsze przykazanie</item>
+        <item>Drugie przykazanie</item>
+        <item>Trzecie przykazanie</item>
+        <item>Czwarte przykazanie</item>
+        <item>Piąte przykazanie</item>
+        <item>Szóste i dziewiąte przykazanie</item>
+        <item>Siódme i dziesiąte przykazanie</item>
+        <item>Ósme przykazanie</item>
+        <item>Przykazania kościelne</item>
+        <item>Grzechy główne</item>
+    </string-array>
+
+    <string-array name="rach_data_items_2_0">
+        <item>Czy odmawiałem pacierz rano i wieczór?</item>
+        <item>Czy spełniałem inne obowiązki wobec Boga?</item>
+        <item>Czy wierzyłem we wróżby i zabobony?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_1">
+        <item>Czy wymawiałem imiona święte bez uszanowania, w gniewie łub w żartach?</item>
+        <item>Czy przysięgałem?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_2">
+        <item>Czy opuściłem Mszę świętą w niedziele i święta?</item>
+        <item>Czy spóźniałem się na Mszę świętą?</item>
+        <item>Czy w kościele pobożnie zachowywałem się?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_3">
+        <item>Czy słuchałem rodziców i przełożonych?</item>
+        <item>Czy szanowałem starszych?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_4">
+        <item>Czy szkodziłem sobie lub innym na zdrowiu?</item>
+        <item>Czy biłem się z kolegami?</item>
+        <item>Czy komu dałem zgorszenie swoim postępowaniem?</item>
+        <item>Czy dręczyłem zwierzęta?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_5">
+        <item>Czy myślałem i mówiłem o rzeczach nieskromnych?</item>
+        <item>Czy bawiłem się nieskromnie?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_6">
+        <item>Czy kradłem lub niszczyłem własność społeczną lub prywatną?</item>
+        <item>Czy pragnąłem zabrać cudzą rzecz?</item>
+        <item>Czy oddawałem rzeczy pożyczone lub znalezione?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_7">
+        <item>Czy kłamałem?</item>
+        <item>Czy obmawialem lub oczerniałem bliźniego?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_8">
+        <item>Czy w dni postne jadłem dobrowolnie potrawy mięsne?</item>
+    </string-array>
+    <string-array name="rach_data_items_2_9">
+        <item>Czy byłem pyszny i wynosiłem się nad drugich?</item>
+        <item>Czy byłem łakomy?</item>
+        <item>Czy byłem zazdrosny?</item>
+        <item>Czy gniewałem się?</item>
+        <item>Czy byłem leniwy w nauce i pracy?</item>
+        <item>Który grzech popełniam najczęściej?</item>
     </string-array>
 
     <string-array name="rach_data_0">
