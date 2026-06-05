@@ -121,6 +121,9 @@
 
     <string name="title_for_children">Dla dzieci i młodzieży</string>
 
+    <string name="settings_coffee">Postaw kawę</string>
+    <string name="settings_coffee_subtitle">Wesprzyj rozwój aplikacji</string>
+
     <string-array name="spinner2_items">
         <item>Rachunek dziesięciu przykazań</item>
         <item>Rachunek dla małżonków</item>

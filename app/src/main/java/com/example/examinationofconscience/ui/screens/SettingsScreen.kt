@@ -9,6 +9,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ChevronRight
+import androidx.compose.material.icons.filled.Coffee
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.WorkspacePremium
@@ -19,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -39,6 +41,9 @@ fun SettingsScreen(
     val theme = MaterialTheme.colorScheme
 
     val appVersion = BuildConfig.VERSION_NAME
+
+    // Inicjalizacja handlera do otwierania linków w przeglądarce
+    val uriHandler = LocalUriHandler.current
 
     Box(
         modifier = Modifier
@@ -112,6 +117,14 @@ fun SettingsScreen(
                                 title = stringResource(R.string.settings_about_title),
                                 subtitle = stringResource(R.string.settings_version_subtitle, appVersion),
                                 onClick = { showInfoDialog = true }
+                            )
+                            HorizontalDivider(color = Color.White.copy(0.05f))
+                            // Nowa zakładka: Postaw kawę
+                            SettingsRow(
+                                icon = Icons.Default.Coffee,
+                                title = stringResource(R.string.settings_coffee),
+                                subtitle = stringResource(R.string.settings_coffee_subtitle),
+                                onClick = { uriHandler.openUri("https://ko-fi.com/michals") }
                             )
                         }
                     }
