@@ -40,7 +40,7 @@ fun SplashScreen(
     )
 
     LaunchedEffect(isPremium) {
-        // Flaga gwarantująca, że wyjdziemy ze Splasha TYLKO RAZ
+        
         var hasNavigated = false
 
         fun safeNavigateToMain() {
@@ -50,14 +50,12 @@ fun SplashScreen(
             }
         }
 
-        // 1. Jeśli Premium -> czekamy chwilę dla efektu i wchodzimy do Main
         if (isPremium) {
             delay(1500)
             safeNavigateToMain()
             return@LaunchedEffect
         }
 
-        // 2. Jeśli brak Premium -> Ładujemy reklamę z zabezpieczeniem czasowym (Timeout)
         var adShown = false
         val adRequest = AdRequest.Builder().build()
 
@@ -77,7 +75,6 @@ fun SplashScreen(
                         }
                     }
 
-                    // Przed samym wyświetleniem upewniamy się, czy timeout nas nie ubiegł
                     if (!hasNavigated) {
                         ad.show(context as Activity)
                         adShown = true
@@ -90,14 +87,12 @@ fun SplashScreen(
             }
         )
 
-        // 3. Zabezpieczenie: Jeśli po 4 sekundach reklama się nie pokazała, wchodzimy do aplikacji
         delay(4000)
         if (!adShown) {
             safeNavigateToMain()
         }
     }
 
-    // Główny kontener na tło Edge-to-Edge
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -117,7 +112,6 @@ fun SplashScreen(
 
             Spacer(modifier = Modifier.height(48.dp))
 
-            // Kółko ładowania (CircularProgressIndicator)
             CircularProgressIndicator(
                 color = Color(0xFFFFD700),
                 strokeWidth = 4.dp,

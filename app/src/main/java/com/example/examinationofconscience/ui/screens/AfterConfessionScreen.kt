@@ -38,8 +38,6 @@ fun AfterConfessionScreen(
     onNavigateToDisplay: () -> Unit,
     onBack: () -> Unit
 ) {
-    // Dynamiczne pobieranie stringów wymaga wywołania Composable, dlatego lista
-    // definiowana jest wewnątrz funkcji AfterConfessionScreen.
     val sections = listOf(
         AfterSection(
             stringResource(id = R.string.after_confession_thanksgiving_title),
@@ -65,18 +63,15 @@ fun AfterConfessionScreen(
 
     val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
 
-    // Główny kontener tła (Edge-to-Edge)
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(backgroundGradient)
     ) {
         Scaffold(
-            // Odsuwa całą zawartość od dolnej belki nawigacyjnej
             modifier = Modifier.navigationBarsPadding(),
             topBar = {
                 CenterAlignedTopAppBar(
-                    // Odsuwa pasek od zegara i ikon systemowych na górze
                     modifier = Modifier.statusBarsPadding(),
                     title = {
                         Text(
@@ -119,11 +114,9 @@ fun AfterConfessionScreen(
                             }
                         )
                     }
-                    // Dodatkowy odstęp na dole, by ostatnia karta nie była zasłonięta przez reklamę
                     item { Spacer(modifier = Modifier.height(80.dp)) }
                 }
-
-                // Reklama banerowa widoczna tylko dla osób bez Premium
+                
                 if (!isPremium) {
                     Box(modifier = Modifier.align(Alignment.BottomCenter)) {
                         BannerAdView()
@@ -165,7 +158,7 @@ fun AfterCard(section: AfterSection, onClick: () -> Unit) {
                 )
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = null, // Często ikony dekoracyjne mogą mieć null
+                    contentDescription = null,
                     tint = Color.White.copy(alpha = 0.6f)
                 )
             }

@@ -29,12 +29,11 @@ import com.example.examinationofconscience.ui.components.BannerAdView
 @Composable
 fun TextDisplayScreen(
     viewModel: ExamenViewModel,
-    subscriptionManager: SubscriptionManager, // DODANO: Menedżer subskrypcji
+    subscriptionManager: SubscriptionManager,
     onBack: () -> Unit
 ) {
     var fontSize by rememberSaveable { mutableFloatStateOf(18f) }
 
-    // DODANO: Nasłuchiwanie statusu Premium
     val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
 
     val backgroundGradient = Brush.verticalGradient(
@@ -82,7 +81,6 @@ fun TextDisplayScreen(
             ) {
                 Column(modifier = Modifier.fillMaxSize()) {
 
-                    // Kontener na tekst (Przewijalny)
                     Box(
                         modifier = Modifier
                             .weight(1f)
@@ -104,7 +102,6 @@ fun TextDisplayScreen(
                         }
                     }
 
-                    // Panel sterowania wielkością tekstu
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -144,7 +141,6 @@ fun TextDisplayScreen(
                         }
                     }
 
-                    // DODANO: Reklama dla użytkowników bez wersji Premium
                     if (!isPremium) {
                         BannerAdView(modifier = Modifier.fillMaxWidth())
                     }

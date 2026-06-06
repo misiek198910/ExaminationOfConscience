@@ -39,7 +39,6 @@ fun ExamenListScreen(
     val resId = getSinArrayResource(typeIndex, catIndex)
     val sinsArray = if (resId != 0) stringArrayResource(id = resId) else emptyArray()
 
-    // Dynamiczny wybór zasobu kategorii dla tytułu w PDF
     val categoryArrayRes = when (typeIndex) {
         0 -> R.array.rach_data_0
         1 -> R.array.rach_data_1

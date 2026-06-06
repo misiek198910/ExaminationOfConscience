@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
@@ -19,6 +18,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -49,7 +49,6 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
-import androidx.core.net.toUri
 
 class MainActivity : ComponentActivity() {
     private lateinit var firebaseAnalytics: FirebaseAnalytics
@@ -68,8 +67,6 @@ class MainActivity : ComponentActivity() {
             appUpdateManager.completeUpdate()
         }
     }
-
-    // Launcher do pytania o uprawnienia do powiadomień (wymagane w Android 13+)
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
@@ -96,10 +93,7 @@ class MainActivity : ComponentActivity() {
         appUpdateManager.registerListener(installStateUpdatedListener)
         checkForAppUpdates()
 
-        // 1. Pytamy o uprawnienia do powiadomień
         askNotificationPermission()
-
-        // 2. Obsługujemy kliknięcie w powiadomienie (gdy aplikacja była wyłączona)
         handleNotificationIntent(intent)
 
         setContent {
@@ -230,7 +224,6 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
     private fun askNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
@@ -239,24 +232,20 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    // Wywoływane, gdy aplikacja była zminimalizowana w tle i kliknięto powiadomienie
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         handleNotificationIntent(intent)
     }
-
     private fun handleNotificationIntent(intent: Intent?) {
         intent?.extras?.let { extras ->
             val action = extras.getString("action")
             val packageName = extras.getString("packageName")
 
-            // Sprawdzamy klucz "action" i jeśli jest to "ToStore", wykonujemy przekierowanie
             if (action == "ToStore" && !packageName.isNullOrEmpty()) {
                 toStore(this, packageName)
             }
         }
     }
-
     private fun toStore(context: Context, packageName: String) {
         try {
             context.startActivity(Intent(Intent.ACTION_VIEW,
@@ -266,8 +255,6 @@ class MainActivity : ComponentActivity() {
                 "https://play.google.com/store/apps/details?id=$packageName".toUri()))
         }
     }
-
-
     private fun checkForAppUpdates() {
         appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
             val isUpdateAvailable = info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
