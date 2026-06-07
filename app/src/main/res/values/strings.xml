@@ -44,7 +44,6 @@
 
     <string name="pdf_title">Mój Rachunek Sumienia</string>
     <string name="pdf_date_prefix">Data wygenerowania: %1$s</string>
-    <string name="share_pdf_title_prefix">Rachunek Sumienia - %1$s</string>
     <string name="share_chooser_title">Udostępnij Rachunek</string>
 
     <string name="main_section_1_title">1. Przygotowanie</string>
