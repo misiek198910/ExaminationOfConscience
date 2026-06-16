@@ -10,7 +10,6 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.FormatSize
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.examinationofconscience.data.billing.SubscriptionManager
 import com.example.examinationofconscience.data.viewmodel.ExamenViewModel
-import com.example.examinationofconscience.ui.components.BannerAdView
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -33,8 +31,6 @@ fun TextDisplayScreen(
     onBack: () -> Unit
 ) {
     var fontSize by rememberSaveable { mutableFloatStateOf(18f) }
-
-    val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
 
     val backgroundGradient = Brush.verticalGradient(
         colors = listOf(Color(0xFF1A237E), Color(0xFF000000))
@@ -139,10 +135,6 @@ fun TextDisplayScreen(
                                 modifier = Modifier.width(45.dp)
                             )
                         }
-                    }
-
-                    if (!isPremium) {
-                        BannerAdView(modifier = Modifier.fillMaxWidth())
                     }
                 }
             }

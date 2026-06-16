@@ -1,6 +1,7 @@
 package com.example.examinationofconscience
 
 import android.Manifest
+import android.R.attr.delay
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
@@ -15,16 +16,24 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.examinationofconscience.data.billing.SubscriptionManager
 import com.example.examinationofconscience.data.viewmodel.ExamenViewModel
 import com.example.examinationofconscience.data.viewmodel.NewsViewModel
+import com.example.examinationofconscience.ui.components.BannerAdView
 import com.example.examinationofconscience.ui.screens.AfterConfessionScreen
 import com.example.examinationofconscience.ui.screens.ExamenCategoriesScreen
 import com.example.examinationofconscience.ui.screens.ExamenListScreen
@@ -49,6 +58,7 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     private lateinit var firebaseAnalytics: FirebaseAnalytics
@@ -100,130 +110,169 @@ class MainActivity : ComponentActivity() {
             RachunekSumieniaTheme {
                 val navController = rememberNavController()
 
-                NavHost(
-                    navController = navController,
-                    startDestination = "splash",
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    composable("splash") {
-                        SplashScreen(
-                            subscriptionManager = subscriptionManager,
-                            onNavigateToMain = {
-                                navController.navigate("main") {
-                                    popUpTo("splash") { inclusive = true }
-                                }
+                // Pobieramy informację o aktualnym ekranie
+                val navBackStackEntry by navController.currentBackStackEntryAsState()
+                val currentRoute = navBackStackEntry?.destination?.route
+
+                // Obserwacja statusu Premium na najwyższym poziomie
+                val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
+
+                var hasLeftSplash by remember { mutableStateOf(false) }
+                var isBannerReady by remember { mutableStateOf(false) }
+
+                // Sprawdzamy, czy przeszliśmy już ekran startowy
+                if (currentRoute != "splash" && currentRoute != null) {
+                    hasLeftSplash = true
+                }
+
+                // Odliczanie startuje wyłącznie po opuszczeniu Splasha
+                LaunchedEffect(hasLeftSplash) {
+                    if (hasLeftSplash && !isBannerReady) {
+                        delay(3000L)
+                        isBannerReady = true
+                    }
+                }
+
+                Column(modifier = Modifier.fillMaxSize()) {
+                    // Część z systemem nawigacji
+                    Box(modifier = Modifier.weight(1f)) {
+                        NavHost(
+                            navController = navController,
+                            startDestination = "splash",
+                            modifier = Modifier.fillMaxSize()
+                        ) {
+                            composable("splash") {
+                                SplashScreen(
+                                    subscriptionManager = subscriptionManager,
+                                    onNavigateToMain = {
+                                        navController.navigate("main") {
+                                            popUpTo("splash") { inclusive = true }
+                                        }
+                                    }
+                                )
                             }
-                        )
-                    }
 
-                    composable("main") {
-                        MainScreen(
-                            newsViewModel = newsViewModel,
-                            subscriptionManager = subscriptionManager,
-                            onNavigateToSection = { section -> navController.navigate(section) },
-                            onNavigateToNews = { navController.navigate("news") },
-                            onNavigateToSettings = { navController.navigate("settings") }
-                        )
-                    }
-
-                    composable("przygotowanie") {
-                        PreparationScreen(
-                            viewModel = examenViewModel,
-                            subscriptionManager = subscriptionManager,
-                            onNavigateToDisplay = { navController.navigate("text_display") },
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("rachunek") {
-                        ExamenSelectionScreen(
-                            subscriptionManager = subscriptionManager,
-                            onBack = { navController.popBackStack() },
-                            onTypeSelected = { typeIndex ->
-                                navController.navigate("rachunek_kategorie/$typeIndex")
+                            composable("main") {
+                                MainScreen(
+                                    newsViewModel = newsViewModel,
+                                    subscriptionManager = subscriptionManager,
+                                    onNavigateToSection = { section -> navController.navigate(section) },
+                                    onNavigateToNews = { navController.navigate("news") },
+                                    onNavigateToSettings = { navController.navigate("settings") }
+                                )
                             }
-                        )
-                    }
 
-                    composable("rachunek_kategorie/{typeIndex}") { backStackEntry ->
-                        val typeIndex = backStackEntry.arguments?.getString("typeIndex")?.toInt() ?: 0
-                        ExamenCategoriesScreen(
-                            subscriptionManager = subscriptionManager,
-                            typeIndex = typeIndex,
-                            onBack = { navController.popBackStack() },
-                            onShowSummary = { navController.navigate("podsumowanie") },
-                            onCategorySelected = { type, cat ->
-                                navController.navigate("rachunek_lista/$type/$cat")
+                            composable("przygotowanie") {
+                                PreparationScreen(
+                                    viewModel = examenViewModel,
+                                    subscriptionManager = subscriptionManager,
+                                    onNavigateToDisplay = { navController.navigate("text_display") },
+                                    onBack = { navController.popBackStack() }
+                                )
                             }
-                        )
+
+                            composable("rachunek") {
+                                ExamenSelectionScreen(
+                                    subscriptionManager = subscriptionManager,
+                                    onBack = { navController.popBackStack() },
+                                    onTypeSelected = { typeIndex ->
+                                        navController.navigate("rachunek_kategorie/$typeIndex")
+                                    }
+                                )
+                            }
+
+                            composable("rachunek_kategorie/{typeIndex}") { backStackEntry ->
+                                val typeIndex = backStackEntry.arguments?.getString("typeIndex")?.toInt() ?: 0
+                                ExamenCategoriesScreen(
+                                    subscriptionManager = subscriptionManager,
+                                    typeIndex = typeIndex,
+                                    onBack = { navController.popBackStack() },
+                                    onShowSummary = { navController.navigate("podsumowanie") },
+                                    onCategorySelected = { type, cat ->
+                                        navController.navigate("rachunek_lista/$type/$cat")
+                                    }
+                                )
+                            }
+
+                            composable("rachunek_lista/{typeIndex}/{catIndex}") { backStackEntry ->
+                                val typeIndex = backStackEntry.arguments?.getString("typeIndex")?.toInt() ?: 0
+                                val catIndex = backStackEntry.arguments?.getString("catIndex")?.toInt() ?: 0
+                                ExamenListScreen(
+                                    typeIndex = typeIndex,
+                                    catIndex = catIndex,
+                                    viewModel = examenViewModel,
+                                    subscriptionManager = subscriptionManager,
+                                    onBack = { navController.popBackStack() }
+                                )
+                            }
+
+                            composable("podsumowanie") {
+                                ExamenSummaryScreen(
+                                    viewModel = examenViewModel,
+                                    subscriptionManager = subscriptionManager,
+                                    onBack = { navController.popBackStack() }
+                                )
+                            }
+
+                            composable("po_spowiedzi") {
+                                AfterConfessionScreen(
+                                    viewModel = examenViewModel,
+                                    subscriptionManager = subscriptionManager,
+                                    onNavigateToDisplay = { navController.navigate("text_display") },
+                                    onBack = { navController.popBackStack() }
+                                )
+                            }
+
+                            composable("text_display") {
+                                TextDisplayScreen(
+                                    viewModel = examenViewModel,
+                                    subscriptionManager = subscriptionManager,
+                                    onBack = { navController.popBackStack() }
+                                )
+                            }
+
+                            composable("news") {
+                                NewsScreen(
+                                    viewModel = newsViewModel,
+                                    onBack = { navController.popBackStack() }
+                                )
+                            }
+
+                            composable("settings") {
+                                SettingsScreen(
+                                    onNavigateToSubscription = { navController.navigate("subscription") },
+                                    onNavigateToPrivacyPolicy = { navController.navigate("privacy_policy") },
+                                    onBack = { navController.popBackStack() }
+                                )
+                            }
+
+                            composable("subscription") {
+                                SubscriptionScreen(
+                                    subscriptionManager = subscriptionManager,
+                                    onBack = { navController.popBackStack() }
+                                )
+                            }
+
+                            composable("privacy_policy") {
+                                PrivacyPolicyScreen(onBack = { navController.popBackStack() })
+                            }
+                        }
                     }
 
-                    composable("rachunek_lista/{typeIndex}/{catIndex}") { backStackEntry ->
-                        val typeIndex = backStackEntry.arguments?.getString("typeIndex")?.toInt() ?: 0
-                        val catIndex = backStackEntry.arguments?.getString("catIndex")?.toInt() ?: 0
-                        ExamenListScreen(
-                            typeIndex = typeIndex,
-                            catIndex = catIndex,
-                            viewModel = examenViewModel,
-                            subscriptionManager = subscriptionManager,
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("podsumowanie") {
-                        ExamenSummaryScreen(
-                            viewModel = examenViewModel,
-                            subscriptionManager = subscriptionManager,
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("po_spowiedzi") {
-                        AfterConfessionScreen(
-                            viewModel = examenViewModel,
-                            subscriptionManager = subscriptionManager,
-                            onNavigateToDisplay = { navController.navigate("text_display") },
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("text_display") {
-                        TextDisplayScreen(
-                            viewModel = examenViewModel,
-                            subscriptionManager = subscriptionManager,
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("news") {
-                        NewsScreen(
-                            viewModel = newsViewModel,
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("settings") {
-                        SettingsScreen(
-                            onNavigateToSubscription = { navController.navigate("subscription") },
-                            onNavigateToPrivacyPolicy = { navController.navigate("privacy_policy") },
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("subscription") {
-                        SubscriptionScreen(
-                            subscriptionManager = subscriptionManager,
-                            onBack = { navController.popBackStack() }
-                        )
-                    }
-
-                    composable("privacy_policy") {
-                        PrivacyPolicyScreen(onBack = { navController.popBackStack() })
+                    if (!isPremium && currentRoute != "splash" && isBannerReady) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .navigationBarsPadding()
+                        ) {
+                            BannerAdView(modifier = Modifier.fillMaxWidth())
+                        }
                     }
                 }
             }
         }
     }
+
     private fun askNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
@@ -236,6 +285,7 @@ class MainActivity : ComponentActivity() {
         super.onNewIntent(intent)
         handleNotificationIntent(intent)
     }
+
     private fun handleNotificationIntent(intent: Intent?) {
         intent?.extras?.let { extras ->
             val action = extras.getString("action")
@@ -246,6 +296,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
     private fun toStore(context: Context, packageName: String) {
         try {
             context.startActivity(Intent(Intent.ACTION_VIEW,
@@ -255,6 +306,7 @@ class MainActivity : ComponentActivity() {
                 "https://play.google.com/store/apps/details?id=$packageName".toUri()))
         }
     }
+
     private fun checkForAppUpdates() {
         appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
             val isUpdateAvailable = info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE

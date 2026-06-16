@@ -1,6 +1,5 @@
 package com.example.examinationofconscience.ui.screens
 
-import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -17,7 +16,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,7 +30,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.examinationofconscience.data.billing.SubscriptionManager
 import com.example.examinationofconscience.data.viewmodel.NewsViewModel
-import com.example.examinationofconscience.ui.components.BannerAdView
 import pakiet.rachuneksumienia.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,16 +50,14 @@ fun MainScreen(
         latestId > lastReadId
     }
 
-    val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
-
     LaunchedEffect(Unit) {
         newsViewModel.fetchNews(context)
     }
 
     val backgroundGradient = Brush.verticalGradient(
         colors = listOf(
-            Color(0xFF1A237E), // Głęboki granat
-            Color(0xFF000000)  // Czerń
+            Color(0xFF1A237E), 
+            Color(0xFF000000)
         )
     )
 
@@ -126,11 +121,10 @@ fun MainScreen(
                         .fillMaxSize()
                         .verticalScroll(rememberScrollState())
                         .padding(horizontal = 24.dp)
-                        .padding(bottom = if (!isPremium) 60.dp else 16.dp), // Bezpieczny margines od dołu przed bannerem
+                        .padding(bottom = 16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center // WYCENTROWANIE KART NA ŚRODKU EKRANU
+                    verticalArrangement = Arrangement.Center
                 ) {
-                    // Sekcja 1: Przygotowanie
                     GlassMenuCard(
                         title = stringResource(id = R.string.main_section_1_title),
                         subtitle = stringResource(id = R.string.main_section_1_subtitle),
@@ -140,7 +134,6 @@ fun MainScreen(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // Sekcja 2: Rachunek Sumienia
                     GlassMenuCard(
                         title = stringResource(id = R.string.main_section_2_title),
                         subtitle = stringResource(id = R.string.main_section_2_subtitle),
@@ -150,19 +143,12 @@ fun MainScreen(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // Sekcja 3: Po Spowiedzi
                     GlassMenuCard(
                         title = stringResource(id = R.string.main_section_3_title),
                         subtitle = stringResource(id = R.string.main_section_3_subtitle),
                         icon = Icons.Default.CheckCircle,
                         onClick = { onNavigateToSection("po_spowiedzi") }
                     )
-                }
-
-                if (!isPremium) {
-                    Box(modifier = Modifier.align(Alignment.BottomCenter)) {
-                        BannerAdView(modifier = Modifier.fillMaxWidth())
-                    }
                 }
             }
         }

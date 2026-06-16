@@ -45,7 +45,6 @@ import androidx.core.content.FileProvider
 import com.example.examinationofconscience.data.billing.SubscriptionManager
 import com.example.examinationofconscience.data.viewmodel.ExamenViewModel
 import com.example.examinationofconscience.data.viewmodel.SinItem
-import com.example.examinationofconscience.ui.components.BannerAdView
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -228,10 +227,6 @@ fun ExamenSummaryScreen(
                         }
                     }
                 }
-
-                if (!isPremium) {
-                    BannerAdView(modifier = Modifier.fillMaxWidth())
-                }
             }
         }
     }
@@ -338,8 +333,6 @@ private fun generatePdf(context: Context, uri: Uri, sins: List<SinItem>) {
         pdfDocument.close()
     }
 }
-
-// POPRAWKA: sharePdf teraz też przyjmuje List<SinItem> i korzysta ze wspólnej funkcji
 private fun sharePdf(context: Context, sins: List<SinItem>) {
     val fileName = "RachunekSumienia.pdf"
     val file = File(context.cacheDir, fileName)

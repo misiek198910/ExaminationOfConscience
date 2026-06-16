@@ -10,8 +10,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -24,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.examinationofconscience.data.billing.SubscriptionManager
 import com.example.examinationofconscience.data.viewmodel.ExamenViewModel
-import com.example.examinationofconscience.ui.components.BannerAdView
 import pakiet.rachuneksumienia.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,8 +49,6 @@ fun ExamenListScreen(
     val backgroundGradient = Brush.verticalGradient(
         colors = listOf(Color(0xFF1A237E), Color(0xFF000000))
     )
-
-    val isPremium by subscriptionManager.isPremium.observeAsState(initial = false)
 
     Box(
         modifier = Modifier
@@ -129,13 +124,7 @@ fun ExamenListScreen(
                             }
                         }
                     }
-                    item { Spacer(modifier = Modifier.height(80.dp)) }
-                }
-
-                if (!isPremium) {
-                    Box(modifier = Modifier.align(Alignment.BottomCenter)) {
-                        BannerAdView(modifier = Modifier.fillMaxWidth())
-                    }
+                    item { Spacer(modifier = Modifier.height(16.dp)) }
                 }
             }
         }
